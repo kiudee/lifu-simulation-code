@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Lernen in feindlicher Umgebung - Source Code by kiudee</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Lernen in feindlicher Umgebung - Source Code</h1>
+        <p>Source code of the simulation I did for my bachelor thesis “Lernen in feindlicher Umgebung”</p>
+
+        <p class="view"><a href="https://github.com/kiudee/lifu-simulation-code">View the Project on GitHub <small>kiudee/lifu-simulation-code</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/kiudee/lifu-simulation-code/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/kiudee/lifu-simulation-code/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/kiudee/lifu-simulation-code">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Required software</h1>
+
+<p>To be able to run the simulation you need these components.
+Note that this is the configuration the experiments were run on.
+So it may be possible to run the simulation on older versions.</p>
+
+<ul>
+<li>Python 3.2.3</li>
+<li>NumPy 1.6.2</li>
+<li>SciPy 0.10.1</li>
+<li>Matplotlib 1.1.1</li>
+</ul><h1>Running a simulation</h1>
+
+<p>The main file responsible for running a simulation is called <code>plotter.py</code>.</p>
+
+<p>Look for the line <code># Parameters:</code>. Here you can set the following parameters:</p>
+
+<ul>
+<li>
+<code>rounds</code>: The number of rounds/trials in each simulation</li>
+<li>
+<code>repetitions</code>: How many times do you want to repeat the simulation?</li>
+<li>
+<code>environment</code>: Here choose one of these environment/opponent models:
+
+<ul>
+<li>
+<code>BernoulliEnvironment</code> is an environment with 2 bernoulli-distributed arms (p1 = 0.5, p2 = 0.6)</li>
+<li>
+<code>SwapEnvironment</code> implements the static <em>Flip</em>-strategy (oblivious enemy)</li>
+<li>
+<code>EvilEnvironment</code> implements the adaptive <em>Flip</em>-strategy (general enemy)</li>
+</ul>
+</li>
+</ul><p>Running the simulation using <code>python plotter.py</code> will create 3 files in the subdirectory <code>./sim/</code>:</p>
+
+<ol>
+<li>A pickled data file containing the whole simulation</li>
+<li>A pdf showing a plot of the average cumulative regret over time</li>
+<li>A pdf showing a boxplot of the cumulative regret</li>
+</ol>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/kiudee">kiudee</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-33691301-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
