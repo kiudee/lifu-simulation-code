@@ -78,6 +78,8 @@ class Plotter():
         ax1.set_axisbelow(True)
         ax1.set_xlabel("Verfahren")
         ax1.set_ylabel("Kumulativer Regret")
+        ax1.set_yscale("log")
+
 
         # Boxes with colors:
         for i in range(len(dc.items())):
