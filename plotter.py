@@ -133,12 +133,12 @@ class Plotter():
 if __name__ == "__main__":
     # Parameters:
     rounds = 10000
-    repetitions = 100
+    repetitions = 200
     # Possible Environments:
     #  * BernoulliEnvironment
     #  * SwapEnvironment (static Flip)
     #  * EvilEnvironment (adaptive Flip)
-    environment = SwapEnvironment
+    environment = BernoulliEnvironment
 
     algos = [Exp3Forecaster, INForecaster]
     sim = Controller(arms=2, rounds=rounds, environment=environment,

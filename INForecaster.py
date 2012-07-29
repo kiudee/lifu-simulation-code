@@ -47,34 +47,3 @@ class INForecaster():
 
     def get_name(self):
         return "INForecaster"
-
-if __name__ == "__main__":
-    from scipy.stats import norm, truncnorm, bernoulli
-    rounds = 10000
-    inf = INForecaster(2, rounds, highprob=False)
-    #rewards = {0 : truncnorm.rvs(0, 1, size=rounds),
-               #1 : truncnorm.rvs(0.1, 1, size=rounds),
-               #2 : truncnorm.rvs(0.2, 0.9, size=rounds),
-               #3 : truncnorm.rvs(0.3, 0.5, size=rounds),
-               #4 : truncnorm.rvs(0, 0.9, size=rounds)
-              #}
-    #rewards = {0: truncnorm.rvs(0.9, 1.0, size=rounds),
-               #1: truncnorm.rvs(0.85, 1.0, size=rounds),
-               #2: truncnorm.rvs(0.8, 1.0, size=rounds),
-               #3: truncnorm.rvs(0.75, 1.0, size=rounds),
-               #4: truncnorm.rvs(0.7, 1.0, size=rounds)
-              #}
-    rewards = {0: bernoulli.rvs(0.8, size=rounds),
-               1: bernoulli.rvs(0.9, size=rounds),
-               2: bernoulli.rvs(1.0, size=rounds),
-               3: bernoulli.rvs(1.0, size=rounds),
-               4: bernoulli.rvs(1.0, size=rounds)
-              }
-    import pprint as pp
-    for t in range(rounds):
-        elem = inf.next_arm()
-        inf.reward(elem, rewards[elem][t])
-        #print("[{}] - Elem [{}] - Dist: {}, Sum: {}".format(t, elem, inf.prob, sum(inf.prob)))
-    print("Dist: {}".format(inf.prob))
-        #pp.pprint(inf.prob)
-
