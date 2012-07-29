@@ -8,7 +8,7 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib.patches import Polygon
-from scipy.stats import bayes_mvs
+from scipy.stats import trimboth
 import progressbar as pb
 from simple_env import SimpleEnvironment
 from bernoulli_env import BernoulliEnvironment
@@ -106,8 +106,8 @@ class Plotter():
         plt.subplots_adjust(left=0.125, right=0.9, top=0.9, bottom=0.135)
         col_index = 0
         for name, data in dc.items():
-            bayes = np.array([bayes_mvs(x)[0][0] for x in data.T])
-            plt.plot(bayes, color=colors[col_index], label=name, linewidth=2)
+            mean = np.array([np.mean(trimboth(np.sort(x), 0.25)) for x in data.T])
+            plt.plot(mean, color=colors[col_index], label=name, linewidth=2)
             col_index += 1
         ax1.set_xlabel("Runde")
         ax1.set_ylabel("Kumulativer Regret")
